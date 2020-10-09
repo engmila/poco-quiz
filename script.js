@@ -1,7 +1,5 @@
 let rightAnswerList = ["c","d","a","c","c"];
 
-let userAnswerList = [];
-
 let counterTrue = 0;
 let counterFalse = 0;
 
@@ -52,11 +50,7 @@ function results(){
 function nextQuestion(){
     //Check radio button
 
-    //userAnswerList = localStorage.getItem(userAnswerList);
-
     let userAnswer = "";
-
-    console.log(userAnswerList);
 
     let checkAnswer = false;
 
@@ -68,21 +62,17 @@ function nextQuestion(){
     if (firstAnswer)
     {
         userAnswer = "a";
-        //userAnswerList.push("a");
         checkAnswer = true;
     }
 
     if (secondAnswer)
     {
         userAnswer = "b";
-        //userAnswerList.push("b");
         checkAnswer = true;
     }
 
         if (thirdAnswer)
     {
-        //userAnswerList.push("c");
-        //localStorage.setItem(userAnswerList, "c");
         userAnswer = "c";
         checkAnswer = true;
     }
@@ -90,26 +80,48 @@ function nextQuestion(){
     if  (fourthAnswer)
     {
         userAnswer = "d";
-        //userAnswerList.push("d");
         checkAnswer = true;
-    }
+    }    
 
     if(checkAnswer){
 
-        console.log(1);
+        let nextPage = 0;
 
-        localStorage.setItem(userAnswerList, userAnswer);
+        if(window.location.pathname === "/index.html"){
 
-        userAnswerList = localStorage.getItem(userAnswerList);
+            let userAnswerList = [];
 
-        //console.log(userAnswerList.toString());
+            console.log(1);
 
-        let counterPage = userAnswerList.length;
-        //console.log(counterPage);
-        let nextPage = userAnswerList.length + 1;
-        console.log(nextPage);
-        window.location.replace("question" + nextPage + ".html");
+            userAnswerList.push(userAnswer);
+            localStorage.setItem("storageList", JSON.stringify(userAnswerList));
 
+            console.log(userAnswerList.length)
+
+            nextPage = userAnswerList.length + 1;
+        }
+        else {
+            console.log(2);
+
+            let storageList = localStorage.getItem("storageList");
+            let userAnswerList = JSON.parse(storageList);
+
+            userAnswerList.push(userAnswer);
+            localStorage.setItem("storageList", JSON.stringify(userAnswerList));
+            
+            console.log(userAnswerList)
+            console.log(userAnswerList.length)
+
+            nextPage = userAnswerList.length + 1;
+        }
+
+        if(nextPage == 6)
+        {
+            window.location.replace("results.html");
+        } else {
+            window.location.replace("question" + nextPage + ".html");
+        }
+        
     }
     else{
         alert("You can not continue without answering the question.")
