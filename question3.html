@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>QuizSifa</title>
+</head>
+<body>
+
+<section id="quiz">
+        <header>
+            <h2>QUIZ CIFA</h2>
+
+            <h2 id="question">3- How do you display hyperlinks without an underline? </h2>
+            <ul>
+                <li>
+                    <input
+                        type="radio"
+                        id="a"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="a_text" for="a">A {text-decoration:none}</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="b"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="b_text" for="b"> A {text-decoration:no underline}</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="c"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="c_text" for="c">A {decoration:no underline}</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="d"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="d_text" for="d">A {underline:none}</label>
+                </li>
+            </ul>
+    
+            <!--<button onclick="nextQuestion()" id="submit"><a href="question4.html">Submit</a></button>-->
+            <button onclick="nextQuestion()">Next</button>
+        </section>
+        <script src="script.js"></script>
+</body>
+</html>

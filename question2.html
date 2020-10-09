@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Cifa</title>
+</head>
+<body>
+    <section id="quiz">
+        <header>
+            <h2>QUIZ CIFA</h2>
+
+            <h2 id="question">2 - Which is the correct CSS syntax?</h2>
+            <ul>
+                <li>
+                    <input
+                        type="radio"
+                        id="a"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="a_text" for="a"> Body:color=black</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="b"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="b_text" for="b">{body;color:black}</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="c"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="c_text" for="c">{body:color=black(body}</label>
+                </li>
+                <li>
+                    <input
+                        type="radio"
+                        id="d"
+                        name="answer"
+                        class="answer"
+                    />
+                    <label id="d_text" for="d"> Body {color: black}</label>
+                </li>
+            </ul>
+            <!--<button onclick="nextQuestion()" id="submit"><a href="question3.html">Submit</a></button>-->
+            <button onclick="nextQuestion()">Next</button>
+        </header>
+    </section>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
