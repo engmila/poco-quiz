@@ -3,7 +3,13 @@ let rightAnswerList = ["c","d","a","c","c"];
 let counterTrue = 0;
 let counterFalse = 0;
 
-/*function compare(){
+function compare(){
+
+    console.log(1);
+
+    let storageList = localStorage.getItem("storageList");
+    let userAnswerList = JSON.parse(storageList);
+
     for(let i = 0; i < rightAnswerList.length; i++)
     {
         if(userAnswerList[i] == rightAnswerList[i])
@@ -15,37 +21,43 @@ let counterFalse = 0;
             counterFalse++;
         }
     }
+
+    console.log(counterTrue);
 }
 
 function feedback(){
-    let message ="";
+
+    console.log(2);
+
+    console.log(counterTrue);
+
+    var h3 = document.querySelector('h3');
+
     switch(counterTrue){
-        case "0":
-            message = "You have to study more.";
+        case 0:
+            h3.innerHTML = "You have to study more.";
         break;
-        case "1":
-            message = "You have to study a little bit more.";
+        case 1:
+            h3.innerHTML = "You have to study a little bit more.";
         break;
-        case "2":
-            message = "It will be better.";
+        case 2:
+            h3.innerHTML = "It will be better.";
         break;
-        case "3":
-            message = "You are on a good way.";
+        case 3:
+            h3.innerHTML = "You are on a good way.";
         break;
-        case "4":
-            message = "Good! You did well.";
+        case 4:
+            h3.innerHTML = "Good! You did well.";
         break;
-        case "5":
-            message = "Congrats! You are a genius.";
+        case 5:
+            h3.innerHTML= "Congrats! You are a genius.";
     }
-    var h3 = document.getElementById("demo");
-    h3.innerHTML= message;
 }
 
 function results(){
     compare();
     feedback();
-}*/
+}
 
 function nextQuestion(){
     //Check radio button
